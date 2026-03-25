@@ -1,0 +1,8 @@
+com.hunterwittenborn.Celeste
+com.ktechpit.whatsie
+com.notepadqq.Notepadqq
+com.valvesoftware.Steam
+com.visualstudio.code
+io.github.swordpuffin.wardrobe
+md.obsidian.Obsidian
+org.flameshot.Flameshot
