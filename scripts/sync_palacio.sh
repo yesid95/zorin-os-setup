@@ -22,12 +22,28 @@ fi
 # O si hubo una desincronización crítica, se debe correr manualmente con --resync
 # Ejemplo: rclone bisync "gdrive:🏰Palacio Mental" "$HOME/Documentos/Palacio-Mental" --resync
 
-# Ejecución estándar para el Cron/Timer
-/usr/bin/rclone bisync "$RUTA_NUBE" "$RUTA_LOCAL" --verbose --transfers $CONCURRENCY
+# Capturamos la salida para buscar el mensaje de error de resync
+OUTPUT=$(/usr/bin/rclone bisync "$RUTA_NUBE" "$RUTA_LOCAL" --verbose --transfers $CONCURRENCY 2>&1)
 
-if [ $? -eq 0 ]; then
-    echo "Sincronización exitosa."
+# Imprimimos la salida para los logs de systemd
+echo "$OUTPUT"
+
+# Si contiene la palabra resync, auto-reparamos
+if echo "$OUTPUT" | grep -q "\-\-resync"; then
+    echo "⚠️ Se detectó corrupción de caché por un apagado repentino. Auto-reparando con --resync..."
+    /usr/bin/rclone bisync "$RUTA_NUBE" "$RUTA_LOCAL" --verbose --transfers $CONCURRENCY --resync
+    if [ $? -eq 0 ]; then
+         echo "✅ Auto-reparación exitosa."
+    else
+         echo "❌ Error fatal en auto-reparación. Revisa rclone."
+    fi
 else
-    echo "Error en sincronización. Revisa los logs de rclone."
-    # notify-send "Rclone Bisync" "Error sincronizando el Palacio Mental"
+    # Si no nos pidió resync, validamos que Rclone haya terminado bien buscando errores críticos
+    if echo "$OUTPUT" | grep -q "ERROR :"; then
+        echo "❌ Error en sincronización por otra causa. Revisa los logs de rclone."
+    else
+        echo "✅ Sincronización exitosa."
+    fi
 fi
+
+
