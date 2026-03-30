@@ -1,6 +1,15 @@
 bare
+chromium
+core
 core20
+core22
+core24
+cups
+gnome-46-2404
 gtk-common-themes
+hunspell-dictionaries
+kf6-core24
+lxqt-support-core24
+mesa-2404
 qt515-core20
 snapd
-whatsie
