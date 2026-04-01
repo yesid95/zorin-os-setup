@@ -28,5 +28,9 @@ Simplemente ejecuta el script de respaldo en tu sistema actual. Guardará un reg
 
 El script de instalación requerirá la confirmación de permisos de administrador (`sudo`) para instalar los paquetes. Automáticamente seguirá tres pasos: instalar paquetes, copiar dotfiles y aplicar configuraciones visuales del entorno de escritorio (dconf).
 
+## Documentación Detallada
+
+Para conocer el funcionamiento de cada script, los atajos de teclado configurados y cómo realizar el mantenimiento de este repositorio, consulta el [Manual de Usuario](docs/manual_usuario.md).
+
 > [!NOTE]
 > Es posible que al reinstalar ciertos atajos o temas visuales necesites reiniciar tu sesión para que gnome/dconf refresque los cambios.
