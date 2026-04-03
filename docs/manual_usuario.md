@@ -14,6 +14,7 @@ Este documento detalla el funcionamiento, uso y mantenimiento de los scripts de 
 | `leer_office.sh` | Lector de texto en voz alta usando Piper TTS y el portapapeles. |
 | `stop_tts.sh` | Detiene inmediatamente cualquier lectura activa (Piper o Orca). |
 | `99-backup.sh` | Realiza un volcado actual de las configuraciones de GNOME al archivo `.ini`. |
+| **Mission Center** | Monitor de sistema avanzado con estética profesional (Administrador de Tareas). |
 
 ---
 
@@ -24,6 +25,7 @@ Se han configurado los siguientes atajos para facilitar el flujo de trabajo diar
 | Acción | Atajo | Función |
 | :--- | :--- | :--- |
 | **Sincronizar Palacio** | `Super + Alt + P` | Ejecuta la sincronización **silenciosa**. Muestra una notificación discreta al concluir o una alerta crítica en caso de error. No interrumpe el flujo de trabajo. |
+| **Monitor Sistema** | `Ctrl + Shift + Esc` | Abre **Mission Center** para monitorizar CPU, RAM, Disco y Red en tiempo real. |
 | **Iniciar Lectura** | `Ctrl + Alt + S` | Lee el texto actualmente copiado en el portapapeles. |
 | **Detener Lectura** | `Ctrl + Alt + X` | Detiene Piper TTS y desactiva el lector Orca si está encendido. |
 
