@@ -8,6 +8,7 @@ Estos son los atajos creados específicamente para las herramientas de este repo
 | Herramienta | Atajo | Comando / Script |
 | :--- | :--- | :--- |
 | **Iniciar Lectura TTS** | `Ctrl + Alt + S` | `leer_office.sh` |
+| **Historial Copiado** | `Super + V` | `CopyQ` (Estilo Windows) |
 | **Sincronizar Palacio** | `Super + Alt + P` | `sync_palacio.sh` |
 | **Detener Lectura TTS** | `Ctrl + Alt + X` | `stop_tts.sh` |
 | **Caracteres / Emojis** | `Super + Coma (,)` | `gnome-characters` |
@@ -20,7 +21,12 @@ Este es el origen del "caos" reportado anteriormente.
 *   **Atajo del Sistema:** `Super + Alt + S` (Activar Lector de Pantalla/Orca).
 *   **Diagnóstico:** Debido a que ambos usan `Alt` y `S`, es extremadamente fácil pulsar la tecla `Super` por error en lugar de `Ctrl`. Esto activa el lector de pantalla de GNOME, que lee cada movimiento del ratón y cambia el comportamiento del foco.
 
-### 2. Atajos de Sistema Comunes (`Super`)
+### 2. El Atajo de Historial (Super + V)
+Originalmente, `Super + V` abría la Bandeja de Mensajes de Zorin OS. 
+*   **Decisión:** Se ha desactivado la función nativa para dar prioridad al **Historial de Copiado (CopyQ)**, alineando el sistema con el estándar de productividad de Windows.
+*   **Resultado:** Ahora, al pulsar `Super + V`, aparecerá directamente tu lista de textos copiados.
+
+### 3. Atajos de Sistema Comunes (`Super`)
 Windows/Zorin utiliza la tecla `Super` para casi todas sus funciones principales:
 *   `Super + A`: Menú de Aplicaciones.
 *   `Super + V / M`: Bandeja de Mensajes/Notificaciones.
