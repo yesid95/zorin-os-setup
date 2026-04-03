@@ -10,7 +10,7 @@ Este documento detalla el funcionamiento, uso y mantenimiento de los scripts de 
 | `02-dotfiles.sh` | Sincronización de archivos de configuración (`.bashrc`, `.gitconfig`, etc.). |
 | `03-settings.sh` | Carga de configuraciones de entorno de escritorio (dconf). |
 | `04-shortcuts.sh` | Registro automatizado de atajos de teclado personalizados. |
-| `sync_palacio.sh` | Sincronización bidireccional de la carpeta "Palacio Mental" con Google Drive (Rclone). |
+| `sync_palacio.sh` | Sincronización silenciosa en segundo plano de la carpeta "Palacio Mental" con Google Drive (Rclone). |
 | `leer_office.sh` | Lector de texto en voz alta usando Piper TTS y el portapapeles. |
 | `stop_tts.sh` | Detiene inmediatamente cualquier lectura activa (Piper o Orca). |
 | `99-backup.sh` | Realiza un volcado actual de las configuraciones de GNOME al archivo `.ini`. |
@@ -23,7 +23,7 @@ Se han configurado los siguientes atajos para facilitar el flujo de trabajo diar
 
 | Acción | Atajo | Función |
 | :--- | :--- | :--- |
-| **Sincronizar Palacio** | `Super + Alt + P` | Ejecuta la sincronización **bidireccional**. Muestra una ventana de progreso (Zenity) y lanza una notificación al concluir. |
+| **Sincronizar Palacio** | `Super + Alt + P` | Ejecuta la sincronización **silenciosa**. Muestra una notificación discreta al concluir o una alerta crítica en caso de error. No interrumpe el flujo de trabajo. |
 | **Iniciar Lectura** | `Ctrl + Alt + S` | Lee el texto actualmente copiado en el portapapeles. |
 | **Detener Lectura** | `Ctrl + Alt + X` | Detiene Piper TTS y desactiva el lector Orca si está encendido. |
 
