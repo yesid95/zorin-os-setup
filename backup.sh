@@ -42,6 +42,9 @@ fi
 if [ -f ~/.gitconfig ]; then
     cp ~/.gitconfig "$DOTFILES_DIR/gitconfig"
 fi
+if [ -f ~/.zshrc ]; then
+    cp ~/.zshrc "$DOTFILES_DIR/zshrc"
+fi
 
 # Respaldar configuraciones comunes de .config si existen
 # Puedes agregar mas carpetas de tu ~/.config/ a este listado
@@ -53,12 +56,17 @@ for conf_file in "Code/User/settings.json" "Code/User/keybindings.json" "Code/Us
     fi
 done
 
-for conf in "htop" "terminator" "vlc" "obs-studio"; do
+for conf in "htop" "terminator" "vlc" "obs-studio" "rclone"; do
     if [ -e "$HOME/.config/$conf" ]; then
         mkdir -p "$DOTFILES_DIR/config/$(dirname "$conf")"
         cp -r "$HOME/.config/$conf" "$DOTFILES_DIR/config/$(dirname "$conf")/"
     fi
 done
+
+# Configuración de Starship
+if [ -f ~/.config/starship.toml ]; then
+    cp ~/.config/starship.toml "$DOTFILES_DIR/config/starship.toml"
+fi
 
 # Extensiones de VS Code
 if command -v code &> /dev/null; then

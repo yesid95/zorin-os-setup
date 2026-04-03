@@ -1,0 +1,12 @@
+# Ignorar archivos de configuración sensibles
+dotfiles/config/rclone/rclone.conf
+
+# Ignorar historiales y archivos temporales
+.zsh_history
+.bash_history
+*.bak
+*.tmp
+
+# Ignorar carpetas de caché
+.cache/
+**/__pycache__/

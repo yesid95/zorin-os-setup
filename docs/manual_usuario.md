@@ -6,15 +6,14 @@ Este documento detalla el funcionamiento, uso y mantenimiento de los scripts de 
 
 | Script | Propósito |
 | :--- | :--- |
-| `01-packages.sh` | Instalación masiva de paquetes (APT, Flatpak, Snap). |
-| `02-dotfiles.sh` | Sincronización de archivos de configuración (`.bashrc`, `.gitconfig`, etc.). |
+| `01-packages.sh` | Instalación masiva de paquetes (APT, Flatpak, Snap) + Starship + Oh My Zsh. |
+| `02-dotfiles.sh` | Sincronización de dotfiles (`.zshrc`, `.gitconfig`, etc.) y cambio a Zsh. |
 | `03-settings.sh` | Carga de configuraciones de entorno de escritorio (dconf). |
 | `04-shortcuts.sh` | Registro automatizado de atajos de teclado personalizados. |
-| `sync_palacio.sh` | Sincronización silenciosa en segundo plano de la carpeta "Palacio Mental" con Google Drive (Rclone). |
-| `leer_office.sh` | Lector de texto en voz alta usando Piper TTS y el portapapeles. |
-| `stop_tts.sh` | Detiene inmediatamente cualquier lectura activa (Piper o Orca). |
-| `99-backup.sh` | Realiza un volcado actual de las configuraciones de GNOME al archivo `.ini`. |
-| **Mission Center** | Monitor de sistema avanzado con estética profesional (Administrador de Tareas). |
+| `sync_palacio.sh` | Sincronización silenciosa con Google Drive (Rclone). |
+| `leer_office.sh` | Lector de texto Piper TTS. |
+| `stop_tts.sh` | Detiene Piper o Orca inmediatamente. |
+| `backup.sh` | (Raíz) Respaldo completo de paquetes, dotfiles y ajustes. |
 
 ---
 
@@ -35,16 +34,27 @@ Se han configurado los siguientes atajos para facilitar el flujo de trabajo diar
 
 Para asegurar que tu repositorio esté actualizado antes de una migración, sigue estos pasos:
 
-1. **Actualizar Configuraciones:** Si cambias el fondo de pantalla, el tema o agregas nuevos atajos desde la interfaz visual, ejecuta:
+1. **Actualizar Todo:** Para capturar paquetes nuevos, cambios en `.zshrc` o ajustes de GNOME:
    ```bash
-   ./scripts/99-backup.sh
+   ./backup.sh
    ```
-2. **Guardar Cambios:** No olvides subir los cambios a tu repositorio remoto:
+2. **Guardar Cambios:** Sube los cambios a tu repositorio:
    ```bash
    git add .
-   git commit -m "Actualización de configuraciones de sistema"
+   git commit -m "Actualización: Respaldo completo (Zsh, UI, Apps)"
    git push
    ```
+
+---
+
+## 🐚 Experiencia de Terminal Moderna
+
+Hemos migrado a un entorno **Zsh** con esteroides:
+- **Starship:** Prompt ultra rápido y personalizable visualmente.
+- **Oh My Zsh:** Gestión de plugins (autosuggestions, syntax-highlighting).
+- **LSD:** Reemplazo de `ls` con iconos y colores (configurar fuente Nerd Font recomendada).
+- **Batcat:** Reemplazo de `cat` con resaltado de sintaxis (alias `cat`).
+- **FZF:** Búsqueda difusa de archivos e historial (`Ctrl + R`, `Ctrl + T`).
 
 ---
 

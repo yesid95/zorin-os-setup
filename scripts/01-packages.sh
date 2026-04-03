@@ -38,7 +38,34 @@ else
     echo "  >> No hay lista de Snap para instalar."
 fi
 
-# 4. Instalar Extensiones de VS Code
+# 4. Instalar Starship
+if ! command -v starship &> /dev/null; then
+    echo "  >> Instalando Starship prompt..."
+    curl -sS https://starship.rs/install.sh | sh -s -- -y
+else
+    echo "  >> Starship ya está instalado."
+fi
+
+# 5. Instalar Oh My Zsh y plugins
+if [ ! -d ~/.oh-my-zsh ]; then
+    echo "  >> Instalando Oh My Zsh..."
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+else
+    echo "  >> Oh My Zsh ya está instalado."
+fi
+
+# Descargar plugins de Oh My Zsh si no existen
+ZSH_CUSTOM=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}
+if [ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
+    echo "  >> Descargando zsh-autosuggestions..."
+    git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
+fi
+if [ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]; then
+    echo "  >> Descargando zsh-syntax-highlighting..."
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
+fi
+
+# 6. Instalar Extensiones de VS Code
 if [ -s "$PACKAGES_DIR/vscode-extensions.txt" ]; then
     if command -v code &> /dev/null; then
         echo "  >> Instalando extensiones de VS Code..."

@@ -19,6 +19,19 @@ if [ -f "$DOTFILES_DIR/gitconfig" ]; then
     cp "$DOTFILES_DIR/gitconfig" ~/.gitconfig
 fi
 
+# zshrc
+if [ -f "$DOTFILES_DIR/zshrc" ]; then
+    echo "    - Restaurando ~/.zshrc"
+    [ -f ~/.zshrc ] && mv ~/.zshrc ~/.zshrc.bak
+    cp "$DOTFILES_DIR/zshrc" ~/.zshrc
+fi
+
+# Cambiar shell a zsh
+if command -v zsh &> /dev/null; then
+    echo "    - Cambiando shell por defecto a zsh..."
+    sudo chsh -s "$(which zsh)" "$USER"
+fi
+
 # .config/
 if [ -d "$DOTFILES_DIR/config" ]; then
     echo "    - Restaurando carpetas dentro de ~/.config/"

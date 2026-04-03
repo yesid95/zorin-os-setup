@@ -2,13 +2,17 @@
 
 Este proyecto contiene una serie de scripts para automatizar el respaldo y la restauración de tu entorno Zorin OS (o distribuciones basadas en Ubuntu similares). 
 
-Actúa empaquetando tus listas de paquetes instalados y archivos de configuración para que configurar un equipo nuevo sea sumamente rápido, todo con solo un par de comandos.
+Permite empaquetar tus paquetes (APT, Snap, Flatpak), configuraciones de terminal (**Zsh + Starship**), extensiones de VS Code y personalizaciones del escritorio para que migrar de equipo sea instantáneo y profesional.
 
 ## Uso
 
 ### 1. Respaldo de tu sistema actual
 
-Simplemente ejecuta el script de respaldo en tu sistema actual. Guardará un registro de tus paquetes instalados (APT, Flatpak, Snap), configuraciones del entorno de escritorio (dconf) y extensiones de VS Code. También copiará archivos clave como `.bashrc`, `.gitconfig` y carpetas esenciales de `.config`.
+Simplemente ejecuta el script de respaldo en la raíz del repositorio. Capturará:
+- Paquetes instalados (APT, Flatpak, Snap).
+- Dotfiles clave (`.zshrc`, `.gitconfig`, `starship.toml`, etc.).
+- Ajustes de GNOME/Zorin (dconf).
+- Configuración de Rclone y scripts personalizados.
 
 ```bash
 ./backup.sh

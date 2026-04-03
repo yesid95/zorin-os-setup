@@ -5,10 +5,12 @@ apt-utils
 base-files
 base-passwd
 bash
+bat
 brave-browser
 brave-keyring
 bsdutils
 ca-certificates
+chafa
 chromium-browser
 console-setup
 console-setup-linux
@@ -16,6 +18,7 @@ copyq
 coreutils
 cron
 cron-daemon-common
+curl
 dash
 dbus
 dbus-bin
@@ -38,17 +41,23 @@ dpkg
 e2fsprogs
 efibootmgr
 eject
+fastfetch
 findutils
+flatpak
 fonts-montserrat
 fonts-noto-cjk
 fonts-noto-cjk-extra
+fonts-noto-color-emoji
 fonts-noto-core
 fonts-noto-ui-core
+fzf
 gcc-14-base
 gh
 gir1.2-girepository-2.0
 gir1.2-glib-2.0
+git
 gnome-shell-extension-manager
+gnome-software-plugin-flatpak
 gnome-user-docs-es
 gnupg
 gparted
@@ -69,6 +78,7 @@ iputils-ping
 iso-codes
 kbd
 keyboard-configuration
+kitty
 kmod
 krb5-locales
 language-pack-en
@@ -199,6 +209,7 @@ login
 logrotate
 logsave
 lsb-release
+lsd
 mawk
 media-types
 meson
@@ -238,6 +249,7 @@ python3-yaml
 python3.12
 python3.12-minimal
 python3.12-venv
+rclone
 readline-common
 rsyslog
 sed
@@ -281,3 +293,4 @@ zorin-os-minimal
 zorin-os-restricted-addons
 zorin-os-standard
 zorin-os-www-browser
+zsh
